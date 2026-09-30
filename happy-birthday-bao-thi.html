@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chúc mừng sinh nhật Bảo Thi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#fdf3f2;
+    --pink:#f6d9d8;
+    --rose:#c97b84;
+    --plum:#4a2e33;
+    --gold:#d4a857;
+    --paper:#fffaf9;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --blush:#241a1c;
+      --pink:#3a2529;
+      --rose:#e0a3ab;
+      --plum:#f6e8e6;
+      --paper:#2c2022;
+    }
+  }
+  :root[data-theme="dark"]{
+    --blush:#241a1c;
+    --pink:#3a2529;
+    --rose:#e0a3ab;
+    --plum:#f6e8e6;
+    --paper:#2c2022;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  html{scroll-padding-top: env(safe-area-inset-top, 0px);}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--blush);
+    color:var(--plum);
+    overflow:hidden;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .stage{
+    position:relative;
+    height:100%;
+    width:100%;
+  }
+  .page{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 8vh 8vw;
+    opacity:0;
+    transform:translateY(16px) scale(.97);
+    pointer-events:none;
+    transition:opacity .55s ease, transform .55s ease;
+  }
+  .page.active{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:auto;
+  }
+  .eyebrow{
+    font-size:.85rem;
+    color:var(--rose);
+    letter-spacing:.02em;
+    margin-bottom:1.3rem;
+    background:var(--paper);
+    padding:.4rem 1rem;
+    border-radius:999px;
+    border:1px solid var(--pink);
+    box-shadow:0 3px 10px rgba(201,123,132,.15);
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.05;
+    font-size:clamp(2.2rem, 7vw, 4.2rem);
+    position:relative;
+  }
+  h1::before{
+    content:'';
+    position:absolute;
+    top:50%; left:50%;
+    width:130%; height:220%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(212,168,87,.18), transparent 65%);
+    z-index:-1;
+    pointer-events:none;
+  }
+  h1 em{
+    font-style:italic;
+    font-weight:500;
+    background:linear-gradient(90deg, var(--rose), var(--gold), var(--rose));
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shimmer 3.2s linear infinite;
+  }
+  @keyframes shimmer{
+    to{ background-position:-200% center; }
+  }
+  p.lead{
+    max-width:34ch;
+    font-size:clamp(1rem, 2.4vw, 1.2rem);
+    line-height:1.6;
+    margin-top:1.3rem;
+    color:var(--plum);
+  }
+  .list{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    margin-top:2rem;
+    max-width:38ch;
+    text-align:left;
+  }
+  .list div{
+    display:flex;
+    gap:.9rem;
+    align-items:flex-start;
+    font-size:1.05rem;
+    line-height:1.5;
+  }
+  .list span.dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--rose);
+    margin-top:.55rem;
+    flex:none;
+  }
+  #cover{
+    background-image: linear-gradient(180deg, rgba(255,250,249,.15), rgba(253,243,242,.92)), url('data:image/jpeg;base64,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');
+    background-size:cover;
+    background-position:center;
+  }
+  .signature{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--rose);
+    margin-top:1.6rem;
+    font-size:1.1rem;
+  }
+  .cake{
+    width:64px; height:64px;
+    margin-bottom:1.4rem;
+  }
+  .dots{
+    position:absolute;
+    bottom: calc(3.2rem + env(safe-area-inset-bottom, 0px));
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:.5rem;
+  }
+  .dots span{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--pink);
+    transition:background .3s ease, transform .3s ease;
+  }
+  .dots span.on{
+    background:var(--rose);
+    transform:scale(1.3);
+    box-shadow:0 0 0 4px rgba(201,123,132,.22);
+  }
+  .heart{
+    position:absolute;
+    bottom:-6%;
+    font-size:14px;
+    color:var(--rose);
+    opacity:0;
+    pointer-events:none;
+    z-index:0;
+    animation:floatUp linear infinite;
+  }
+  @keyframes floatUp{
+    0%{ opacity:0; transform:translateY(0) translateX(0) rotate(-6deg); }
+    12%{ opacity:.5; }
+    85%{ opacity:.4; }
+    100%{ opacity:0; transform:translateY(-115vh) translateX(18px) rotate(8deg); }
+  }
+  .nextBtn{
+    position:absolute;
+    bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+    left:50%;
+    transform:translateX(-50%);
+    border:none;
+    background:var(--rose);
+    color:var(--paper);
+    font-family:'Inter', sans-serif;
+    font-size:.98rem;
+    font-weight:500;
+    padding:.85rem 2.1rem;
+    border-radius:999px;
+    cursor:pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 6px 18px rgba(201,123,132,.35);
+  }
+  .nextBtn:hover{ transform:translateY(-2px); }
+  .nextBtn:focus-visible{ outline:3px solid var(--gold); outline-offset:3px; }
+  .nextBtn{ animation:pulseGlow 2.6s ease-in-out infinite; }
+  @keyframes pulseGlow{
+    0%,100%{ box-shadow:0 6px 18px rgba(201,123,132,.35); }
+    50%{ box-shadow:0 8px 26px rgba(212,168,87,.5); }
+  }
+  .star{
+    position:absolute;
+    border-radius:50%;
+    background:var(--gold);
+    pointer-events:none;
+    z-index:0;
+    animation:twinkle ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{ opacity:.12; transform:scale(.7); }
+    50%{ opacity:.85; transform:scale(1.25); }
+  }
+  .blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(40px);
+    opacity:.55;
+    pointer-events:none;
+    z-index:0;
+  }
+  .blob1{
+    width:260px; height:260px;
+    background:var(--pink);
+    top:-60px; left:-60px;
+    animation:drift1 14s ease-in-out infinite;
+  }
+  .blob2{
+    width:220px; height:220px;
+    background:var(--gold);
+    opacity:.28;
+    bottom:-50px; right:-50px;
+    animation:drift2 17s ease-in-out infinite;
+  }
+  @keyframes drift1{
+    0%,100%{ transform:translate(0,0); }
+    50%{ transform:translate(30px,25px); }
+  }
+  @keyframes drift2{
+    0%,100%{ transform:translate(0,0); }
+    50%{ transform:translate(-25px,-20px); }
+  }
+  .page > *{ position:relative; z-index:1; }
+  .flame-wrap{
+    transform-origin:32px 12px;
+    animation:flicker 1.6s ease-in-out infinite;
+  }
+  @keyframes flicker{
+    0%,100%{ transform:scale(1) rotate(0deg); }
+    30%{ transform:scale(1.08,.94) rotate(-3deg); }
+    60%{ transform:scale(.95,1.06) rotate(2deg); }
+  }
+  h1{
+    animation:riseIn .7s ease both;
+  }
+  @keyframes riseIn{
+    from{ opacity:0; transform:translateY(10px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .spark{
+    position:absolute;
+    width:7px; height:7px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:5;
+    animation:spark-burst .95s cubic-bezier(.15,.7,.3,1) forwards;
+  }
+  @keyframes spark-burst{
+    0%{ transform:translate(0,0) scale(1); opacity:1; }
+    70%{ opacity:1; }
+    100%{ transform:translate(var(--dx), var(--dy)) scale(.25); opacity:0; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .page{ transition:none; }
+    .nextBtn{ transition:none; }
+    .blob1, .blob2, .flame-wrap, h1, h1 em, .nextBtn, .star{ animation:none; }
+    .spark, .heart{ display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <section class="page active" id="cover">
+    <div class="eyebrow">Hôm nay là ngày của cậu</div>
+    <h1>Sinh nhật vui vẻ,<br><em>Bảo Thi</em></h1>
+    <p class="lead">Một năm mới đang bắt đầu, và tớ muốn dành vài trang nhỏ này để nói với cậu vài điều.</p>
+  </section>
+
+  <section class="page">
+    <svg class="cake" viewBox="0 0 64 64" fill="none">
+      <ellipse cx="32" cy="57" rx="24" ry="3.5" fill="var(--rose)" opacity=".18"/>
+      <rect x="8" y="40" width="48" height="16" rx="5" fill="var(--pink)"/>
+      <rect x="14" y="26" width="36" height="16" rx="5" fill="#fff" opacity=".9"/>
+      <path d="M8 42c3 3 5-3 8 0s5-3 8 0s5-3 8 0s5-3 8 0s5-3 8 0v-3H8z" fill="var(--rose)"/>
+      <path d="M14 28c2.4 2.4 4-2 6.4 0s4-2 6.4 0s4-2 6.4 0s4-2 6.4 0s4-2 6.4 0v-2.5H14z" fill="var(--pink)"/>
+      <circle cx="20" cy="46" r="1.6" fill="var(--gold)"/><circle cx="30" cy="49" r="1.6" fill="var(--rose)"/>
+      <circle cx="42" cy="46" r="1.6" fill="var(--gold)"/><circle cx="50" cy="49" r="1.6" fill="var(--rose)"/>
+      <rect x="30" y="12" width="4" height="15" rx="1.5" fill="var(--rose)"/>
+      <g class="flame-wrap"><path d="M32 4c-3.4 3.2-3.4 6.4 0 8.6c3.4-2.2 3.4-5.4 0-8.6z" fill="var(--gold)"/></g>
+    </svg>
+    <h1>Một năm nữa,<br>cậu lớn thêm một chút</h1>
+    <p class="lead">Nhìn lại mới thấy cậu đã đi được một chặng dài — vẫn là chính mình, chỉ là phiên bản vững vàng hơn mỗi ngày.</p>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Vài điều tớ luôn thấy ở cậu</div>
+    <div class="list">
+      <div><span class="dot"></span><span>Cậu luôn lắng nghe người khác một cách thật lòng, không vội vàng phán xét.</span></div>
+      <div><span class="dot"></span><span>Nụ cười của cậu có kiểu làm không khí xung quanh nhẹ nhõm hẳn đi.</span></div>
+      <div><span class="dot"></span><span>Cậu tử tế với mọi người quanh mình, kể cả khi không ai để ý điều đó.</span></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Năm nay, tớ mong cậu sẽ có</div>
+    <div class="list">
+      <div><span class="dot"></span><span>Thật nhiều sức khỏe, để đi được xa hơn trên mọi con đường cậu chọn.</span></div>
+      <div><span class="dot"></span><span>Những ngày bình yên xen giữa những điều cậu đang cố gắng.</span></div>
+      <div><span class="dot"></span><span>Ai đó (hoặc điều gì đó) khiến cậu thấy được là chính mình.</span></div>
+    </div>
+  </section>
+
+  <section class="page" id="final">
+    <svg class="cake" viewBox="0 0 64 64" fill="none">
+      <ellipse cx="32" cy="57" rx="24" ry="3.5" fill="var(--rose)" opacity=".18"/>
+      <rect x="8" y="40" width="48" height="16" rx="5" fill="var(--pink)"/>
+      <rect x="14" y="26" width="36" height="16" rx="5" fill="#fff" opacity=".9"/>
+      <path d="M8 42c3 3 5-3 8 0s5-3 8 0s5-3 8 0s5-3 8 0s5-3 8 0v-3H8z" fill="var(--rose)"/>
+      <path d="M14 28c2.4 2.4 4-2 6.4 0s4-2 6.4 0s4-2 6.4 0s4-2 6.4 0s4-2 6.4 0v-2.5H14z" fill="var(--pink)"/>
+      <circle cx="20" cy="46" r="1.6" fill="var(--gold)"/><circle cx="30" cy="49" r="1.6" fill="var(--rose)"/>
+      <circle cx="42" cy="46" r="1.6" fill="var(--gold)"/><circle cx="50" cy="49" r="1.6" fill="var(--rose)"/>
+      <rect x="30" y="12" width="4" height="15" rx="1.5" fill="var(--rose)"/>
+      <g class="flame-wrap"><path d="M32 4c-3.4 3.2-3.4 6.4 0 8.6c3.4-2.2 3.4-5.4 0-8.6z" fill="var(--gold)" id="flame"/></g>
+    </svg>
+    <h1>Chúc mừng sinh nhật,<br><em>Bảo Thi</em></h1>
+    <p class="lead">Cảm ơn cậu vì đã luôn là cậu. Chúc cậu một năm mới thật rực rỡ.</p>
+    <div class="signature">— người bạn luôn quý mến cậu</div>
+  </section>
+
+  <div class="dots" id="dots"></div>
+  <button class="nextBtn" id="nextBtn">Tiếp theo</button>
+</div>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  const stage = document.getElementById('stage');
+  const dotsEl = document.getElementById('dots');
+  const btn = document.getElementById('nextBtn');
+  let i = 0;
+
+  pages.forEach((_, idx) => {
+    const d = document.createElement('span');
+    if(idx===0) d.classList.add('on');
+    dotsEl.appendChild(d);
+  });
+  const dotEls = dotsEl.querySelectorAll('span');
+
+  const colors = ['#c97b84', '#d4a857', '#f6d9d8', '#4a2e33'];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(!reduceMotion){
+    for(let s=0; s<14; s++){
+      const star = document.createElement('span');
+      star.className = 'star';
+      const size = 2 + Math.random()*2.5;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.left = Math.random()*100 + '%';
+      star.style.top = Math.random()*100 + '%';
+      star.style.animationDuration = (2 + Math.random()*2.4) + 's';
+      star.style.animationDelay = (Math.random()*2.4) + 's';
+      stage.insertBefore(star, stage.firstChild);
+    }
+    const heartSymbols = ['♥','❤'];
+    for(let h=0; h<6; h++){
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.textContent = heartSymbols[h % 2];
+      heart.style.left = (8 + Math.random()*84) + '%';
+      heart.style.fontSize = (11 + Math.random()*8) + 'px';
+      heart.style.animationDuration = (9 + Math.random()*6) + 's';
+      heart.style.animationDelay = (Math.random()*9) + 's';
+      stage.insertBefore(heart, stage.firstChild);
+    }
+  }
+
+  function spark(x, y){
+    const n = 16;
+    for(let k=0; k<n; k++){
+      const angle = (Math.PI*2*k/n) + Math.random()*0.25;
+      const dist = 38 + Math.random()*46;
+      const s = document.createElement('span');
+      s.className = 'spark';
+      s.style.left = x + 'px';
+      s.style.top = y + 'px';
+      s.style.background = colors[k % colors.length];
+      s.style.setProperty('--dx', Math.cos(angle)*dist + 'px');
+      s.style.setProperty('--dy', Math.sin(angle)*dist + 'px');
+      stage.appendChild(s);
+      setTimeout(() => s.remove(), 1000);
+    }
+  }
+
+  function fireworks(big){
+    if(reduceMotion) return;
+    const w = stage.clientWidth, h = stage.clientHeight;
+    const bursts = big ? 4 : 2;
+    for(let b=0; b<bursts; b++){
+      setTimeout(() => {
+        spark(w*(0.22+Math.random()*0.56), h*(0.16+Math.random()*0.4));
+      }, b*160);
+    }
+  }
+
+  function show(idx){
+    pages.forEach((p,k)=>p.classList.toggle('active', k===idx));
+    dotEls.forEach((d,k)=>d.classList.toggle('on', k===idx));
+    btn.textContent = (idx === pages.length - 1) ? 'Xem lại từ đầu' : 'Tiếp theo';
+    fireworks(idx === pages.length - 1);
+  }
+
+  btn.addEventListener('click', () => {
+    i = (i + 1) % pages.length;
+    show(i);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowRight'){ i = (i+1) % pages.length; show(i); }
+    if(e.key === 'ArrowLeft'){ i = (i-1+pages.length) % pages.length; show(i); }
+  });
+
+  fireworks(false);
+</script>
+</body>
+</html>
